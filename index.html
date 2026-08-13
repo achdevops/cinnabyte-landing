@@ -296,8 +296,14 @@
       line-height: 1.8;
       margin-bottom: 2rem;
     }
-    .video-frame {
-      background: #242424;
+    .media-frame {
+      width: min(100%, 580px);
+      aspect-ratio: 1;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--mint);
       border: 1px solid rgba(255,255,255,.14);
       border-radius: 26px;
       padding: .75rem;
@@ -305,36 +311,18 @@
       overflow: hidden;
       transition: transform .3s var(--ease), border-color .3s var(--ease);
     }
-    .video-frame:hover {
+    .media-frame:hover {
       transform: translateY(-6px);
       border-color: rgba(255,255,255,.3);
     }
-    .frame-topbar {
-      height: 2.35rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 .4rem;
-    }
-    .frame-dots { display: flex; gap: .35rem; }
-    .frame-dot { width: .5rem; height: .5rem; border-radius: 50%; background: #555; }
-    .frame-dot:nth-child(1) { background: var(--rose); }
-    .frame-dot:nth-child(2) { background: var(--pink); }
-    .frame-dot:nth-child(3) { background: var(--mint); }
-    .frame-label {
-      font-size: .62rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.48);
-    }
-    .video-frame video {
+    .media-frame img {
       display: block;
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
       border-radius: 18px;
-      background: #111;
+      background: var(--mint);
     }
 
     .product-story {
@@ -404,7 +392,7 @@
     }
 
     .card-visual {
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/9;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -415,8 +403,7 @@
     .card-visual-img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      padding: 1rem;
+      object-fit: cover;
     }
     .card-tag {
       position: absolute;
@@ -490,6 +477,27 @@
     .order-intro .section-heading { margin-bottom: 1.2rem; }
     .order-intro .t-body { font-size: 0.9rem; max-width: 340px; margin-bottom: 2rem; }
 
+    .order-process {
+      width: min(100%, 480px);
+      aspect-ratio: 1;
+      margin-top: 2.25rem;
+      padding: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      background: var(--pink);
+      border: 1px solid rgba(240,79,166,.2);
+      box-shadow: 0 20px 45px rgba(107,48,77,.16);
+    }
+    .order-process img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 17px;
+    }
+
     .order-form { display: flex; flex-direction: column; gap: 1.2rem; }
 
     .field-group { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -537,6 +545,7 @@
     }
     .delivery-label-title { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
     .delivery-label-sub { font-size: 0.72rem; color: var(--ink-muted); margin-top: 0.2rem; }
+    .delivery-label-fee { display: block; margin-top: .35rem; color: var(--rose); font-size: .68rem; font-weight: 600; }
 
     #form-error {
       display: none;
@@ -689,7 +698,7 @@
       .experience-section { padding: 4.5rem 1.5rem 6rem; }
       .experience-section { grid-template-columns: 1fr; gap: 3rem; }
       .experience-content { max-width: 38rem; }
-      .video-frame { width: min(100%, 680px); justify-self: center; }
+      .media-frame { width: min(100%, 580px); justify-self: center; }
 
       .menu-section { padding: 4rem 1.5rem; }
       .section-header { flex-direction: column; align-items: flex-start; }
@@ -710,7 +719,7 @@
       .hero-copy { min-height: 66vh; }
       .hero-video-frame { border-radius: 22px; }
       .hero-video-frame video { border-radius: 16px; }
-      .video-frame { max-width: 440px; }
+      .media-frame { max-width: 440px; }
       .header-logo img { width: 38px; height: 38px; }
       .delivery-grid { grid-template-columns: 1fr; }
       .site-header > .btn-pill { display: none; }
@@ -811,26 +820,17 @@
 ───────────────────────────────────────── -->
 <section class="experience-section" id="experiencia">
   <div class="experience-content reveal">
-    <span class="t-label" style="color:rgba(255,255,255,.5);">— El toque final —</span>
-    <h2 class="section-heading">Glaseado para<br><em>mirar de cerca.</em></h2>
+    <span class="t-label" style="color:rgba(255,255,255,.5);">— Sixpack chocolate —</span>
+    <h2 class="section-heading">Seis veces más<br><em>difícil de compartir.</em></h2>
     <p class="experience-copy">
-      Una segunda mirada al proceso: textura, canela y el glaseado que termina cada CinnaByte justo antes de llegar a tus manos.
+      Seis CinnaBytes con cobertura de chocolate, listos para compartir, regalar o guardar como tu mejor secreto.
     </p>
-    <a href="#pedido" class="btn-pill rose">Quiero el mío</a>
+    <a href="#pedido" class="btn-pill rose">Consultar sixpack</a>
   </div>
 
-  <article class="video-frame reveal reveal-delay-1">
-    <div class="frame-topbar">
-      <div class="frame-dots" aria-hidden="true">
-        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
-      </div>
-      <span class="frame-label">CinnaByte · Close-up</span>
-    </div>
-    <video muted loop playsinline controls preload="metadata" aria-label="Detalle del glaseado de un cinnamon roll Cinnabyte">
-      <source src="videos/cinna-video-01.mp4" type="video/mp4"/>
-      Tu navegador no puede reproducir este video.
-    </video>
-  </article>
+  <figure class="media-frame reveal reveal-delay-1">
+    <img src="images/six-pack-choco.png" alt="Caja con seis CinnaBytes de chocolate" width="1376" height="768" loading="lazy"/>
+  </figure>
 </section>
 
 <!-- ─────────────────────────────────────────
@@ -851,10 +851,10 @@
     <div class="menu-card reveal">
       <div class="card-visual" style="background: var(--mint);">
         <span class="card-tag">Clásico</span>
-        <span style="font-size:5rem;">🍥</span>
+        <img class="card-visual-img" src="images/classic-cinnabun.png" alt="Classic CinnaByte" width="1376" height="768" loading="lazy"/>
       </div>
       <div class="card-body">
-        <h3 class="card-name">Classic Cinnabun</h3>
+        <h3 class="card-name">Classic CinnaByte</h3>
         <p class="card-desc">Canela, azúcar moreno y glaseado cremoso artesanal. El clásico que nunca necesita una nueva versión.</p>
         <div class="card-footer">
           <span class="card-price">$UY 280</span>
@@ -867,10 +867,10 @@
     <div class="menu-card reveal reveal-delay-1">
       <div class="card-visual" style="background: var(--pink);">
         <span class="card-tag">Especial</span>
-        <span style="font-size:5rem;">🍥</span>
+        <img class="card-visual-img" src="images/mega-cinnabun.png" alt="Mega CinnaByte de chocolate" width="1376" height="768" loading="lazy"/>
       </div>
       <div class="card-body">
-        <h3 class="card-name">Mega Cinnabun</h3>
+        <h3 class="card-name">Mega CinnaByte</h3>
         <p class="card-desc">Tamaño XL y doble glaseado para los que necesitan una actualización completa del sistema.</p>
         <div class="card-footer">
           <span class="card-price">$UY 420</span>
@@ -883,11 +883,11 @@
     <div class="menu-card reveal reveal-delay-2">
       <div class="card-visual" style="background: var(--sand);">
         <span class="card-tag">Pack</span>
-        <span style="font-size:5rem;">🎁</span>
+        <img class="card-visual-img" src="images/six-pack-classic.png" alt="Pack de seis CinnaBytes clásicos" width="1376" height="768" loading="lazy"/>
       </div>
       <div class="card-body">
-        <h3 class="card-name">Pack × 6 Bytes</h3>
-        <p class="card-desc">Seis Cinnabuns clásicos. Ideal para compartir — o no, te entendemos perfectamente.</p>
+        <h3 class="card-name">Pack × 6 CinnaBytes</h3>
+        <p class="card-desc">Seis CinnaBytes clásicos. Ideal para compartir — o no, te entendemos perfectamente.</p>
         <div class="card-footer">
           <span class="card-price">$UY 1.400</span>
           <a href="#pedido" class="btn-pill" style="font-size:0.72rem; padding: 0.5rem 1.1rem;">Pedir</a>
@@ -926,11 +926,14 @@
   <div class="order-intro reveal">
     <span class="t-label">— Pedido —</span>
     <h2 class="section-heading" style="margin-top:1.5rem; margin-bottom:1.2rem;">
-      Tu próximo<br><em>Cinnabun</em><br>te espera.
+      Tu próximo<br><em>CinnaByte</em><br>te espera.
     </h2>
     <p class="t-body" style="font-size:0.88rem;">
       Completá el formulario y te contactamos por WhatsApp para confirmar el pedido y la entrega. Sin complicaciones.
     </p>
+    <figure class="order-process">
+      <img src="images/delivery-process-short.png" alt="Proceso de pedido: completar el formulario, solicitar por WhatsApp, confirmar el pago y recibir el pedido" width="1024" height="1024" loading="lazy"/>
+    </figure>
   </div>
 
   <div class="reveal reveal-delay-1">
@@ -946,9 +949,10 @@
         <label class="field-label" for="f-producto">Producto *</label>
         <select id="f-producto" class="field-input">
           <option value="">Seleccioná tu Byte</option>
-          <option value="Classic Cinnabun ($UY 280)">Classic Cinnabun — $UY 280</option>
-          <option value="Mega Cinnabun ($UY 420)">Mega Cinnabun — $UY 420</option>
-          <option value="Pack x6 Bytes ($UY 1.400)">Pack × 6 Bytes — $UY 1.400</option>
+          <option value="Classic CinnaByte ($UY 280)">Classic CinnaByte — $UY 280</option>
+          <option value="Mega CinnaByte ($UY 420)">Mega CinnaByte — $UY 420</option>
+          <option value="Pack x6 CinnaBytes ($UY 1.400)">Pack × 6 CinnaBytes — $UY 1.400</option>
+          <option value="Pack x6 CinnaBytes Choco (precio a confirmar)">Pack × 6 CinnaBytes Choco — consultar</option>
         </select>
       </div>
 
@@ -968,10 +972,11 @@
             </label>
           </div>
           <div class="delivery-opt">
-            <input type="radio" name="entrega" id="e-envio" value="Envío a Punta del Este"/>
+            <input type="radio" name="entrega" id="e-envio" value="Envío a Punta del Este (+$UY 80)"/>
             <label for="e-envio" class="delivery-label">
               <div class="delivery-label-title">Envío</div>
               <div class="delivery-label-sub">Punta del Este</div>
+              <span class="delivery-label-fee">+$UY 80 por envío</span>
             </label>
           </div>
         </div>
@@ -1020,9 +1025,9 @@
     <div class="footer-col">
       <p class="footer-col-title">Menú</p>
       <ul>
-        <li><a href="#menu">Classic Cinnabun</a></li>
-        <li><a href="#menu">Mega Cinnabun</a></li>
-        <li><a href="#menu">Pack × 6 Bytes</a></li>
+        <li><a href="#menu">Classic CinnaByte</a></li>
+        <li><a href="#menu">Mega CinnaByte</a></li>
+        <li><a href="#menu">Pack × 6 CinnaBytes</a></li>
       </ul>
     </div>
 
@@ -1106,8 +1111,7 @@
 
 _Pedido realizado desde cinnabyte.uy_`;
 
-    // ⚠️ Reemplazá con el número real de WhatsApp de Cinnabyte (598 + número)
-    const numero = '59899000000';
+    const numero = '59897316401';
     window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, '_blank');
   }
 </script>
