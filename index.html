@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cinnabyte – Cinnamon Rolls · Maldonado</title>
+  <title>Cinnabyte – Cinnamon Rolls artesanales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -160,8 +160,9 @@
     .hero {
       min-height: 100dvh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
       padding-top: 5rem;
+      background: var(--mint);
     }
 
     .hero-copy {
@@ -204,6 +205,7 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
+      padding: clamp(1.5rem, 4vw, 4rem);
     }
     .hero-visual::before {
       content: '';
@@ -211,19 +213,23 @@
       inset: 0;
       background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.35) 0%, transparent 65%);
     }
-    .hero-roll-img {
-      width: min(450px, 76%);
-      max-height: 76vh;
-      object-fit: contain;
-      border-radius: 28px;
-      box-shadow: 0 28px 70px rgba(68,37,19,0.22);
-      animation: gentle-float 5s ease-in-out infinite;
+    .hero-video-frame {
+      width: min(100%, 820px);
+      padding: .7rem;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.82);
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(37,60,47,.22);
       position: relative;
       z-index: 1;
     }
-    @keyframes gentle-float {
-      0%, 100% { transform: translateY(0) rotate(-1deg); }
-      50%       { transform: translateY(-16px) rotate(1deg); }
+    .hero-video-frame video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 22px;
+      background: var(--ink);
     }
 
     /* Swirl decoration */
@@ -234,34 +240,6 @@
     }
     .swirl-1 { width: 320px; height: 320px; bottom: -80px; left: -80px; }
     .swirl-2 { width: 180px; height: 180px; top: 60px; right: 40px; }
-
-    /* ── Ticker ── */
-    .ticker {
-      overflow: hidden;
-      background: var(--ink);
-      color: var(--cream);
-      padding: 0.85rem 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .ticker-track {
-      display: flex;
-      gap: 3rem;
-      animation: ticker 20s linear infinite;
-      white-space: nowrap;
-    }
-    .ticker-item {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      font-style: italic;
-      flex-shrink: 0;
-    }
-    .ticker-dot { color: var(--rose); margin-right: -1.5rem; }
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
 
     /* ── Proposición de valor ── */
     .value-grid {
@@ -305,70 +283,18 @@
       padding: 7rem 5rem;
       background: var(--ink);
       color: var(--cream);
-      overflow: hidden;
-      position: relative;
-    }
-    .experience-section::before {
-      content: '';
-      position: absolute;
-      width: 36rem;
-      height: 36rem;
-      border-radius: 50%;
-      background: rgba(240,79,166,0.16);
-      filter: blur(2px);
-      top: -22rem;
-      right: -8rem;
-      pointer-events: none;
-    }
-    .experience-header {
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 4rem;
-      align-items: end;
-      max-width: 1200px;
-      margin: 0 auto 4rem;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: center;
     }
-    .experience-header .section-heading { color: var(--cream); }
+    .experience-content { max-width: 31rem; }
+    .experience-content .section-heading { color: var(--cream); margin: 1rem 0 1.5rem; }
     .experience-copy {
       color: rgba(255,255,255,0.62);
       font-size: .92rem;
       line-height: 1.8;
-      max-width: 30rem;
-    }
-    .experience-grid {
-      display: grid;
-      grid-template-columns: minmax(250px, .72fr) minmax(0, 1.6fr);
-      gap: 1.5rem;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    .brand-poster {
-      background: var(--mint);
-      padding: 1rem;
-      border-radius: 26px;
-      transform: rotate(-2deg);
-      box-shadow: 0 24px 60px rgba(0,0,0,.3);
-      grid-row: 1 / 3;
-    }
-    .brand-poster img {
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 18px;
-    }
-    .brand-poster p {
-      color: var(--ink);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-align: center;
-      text-transform: uppercase;
-      padding: .85rem .5rem .25rem;
+      margin-bottom: 2rem;
     }
     .video-frame {
       background: #242424;
@@ -379,12 +305,10 @@
       overflow: hidden;
       transition: transform .3s var(--ease), border-color .3s var(--ease);
     }
-    .video-frame:nth-child(3) { transform: translateX(2rem); }
     .video-frame:hover {
       transform: translateY(-6px);
       border-color: rgba(255,255,255,.3);
     }
-    .video-frame:nth-child(3):hover { transform: translate(2rem, -6px); }
     .frame-topbar {
       height: 2.35rem;
       display: flex;
@@ -411,6 +335,33 @@
       object-fit: cover;
       border-radius: 18px;
       background: #111;
+    }
+
+    .product-story {
+      display: grid;
+      grid-template-columns: minmax(300px, .85fr) minmax(0, 1.15fr);
+      align-items: center;
+      gap: clamp(3rem, 7vw, 7rem);
+      padding: 7rem 5rem;
+      background: var(--pink);
+    }
+    .product-story-media {
+      max-width: 520px;
+      width: 100%;
+      aspect-ratio: 1;
+      justify-self: center;
+      padding: .8rem;
+      border-radius: 30px;
+      background: rgba(255,255,255,.48);
+      box-shadow: 0 25px 60px rgba(84,37,59,.15);
+      overflow: hidden;
+    }
+    .product-story-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 22px;
     }
 
     /* ── Menu section ── */
@@ -508,37 +459,23 @@
       font-weight: 700;
     }
 
-    /* ── Statement band ── */
-    .statement {
-      background: var(--pink);
-      padding: 6rem 5rem;
+    .product-story-copy { max-width: 34rem; }
+    .product-story-copy .section-heading { margin: 1rem 0 1.5rem; }
+    .product-story-copy .t-body { margin-bottom: 2rem; }
+    .story-points {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      gap: 1rem;
+      list-style: none;
     }
-    .statement-text {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.05em;
+    .story-points li {
+      padding: 1rem;
+      background: rgba(255,255,255,.42);
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 16px;
+      font-size: .8rem;
+      font-weight: 500;
     }
-    .statement-text em { font-style: normal; color: var(--rose); }
-    .statement-detail { display: flex; flex-direction: column; gap: 2rem; }
-    .detail-row {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .detail-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .detail-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .detail-title { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 0.3rem; text-transform: uppercase; }
-    .detail-text { font-size: 0.85rem; font-weight: 300; color: var(--ink-muted); line-height: 1.6; }
 
     /* ── Order / Form ── */
     .order-section {
@@ -722,15 +659,13 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-roll-img { animation: none; }
-      .ticker-track  { animation: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
     }
 
     /* ── Responsive ── */
     @media (max-width: 1024px) {
       .experience-section { padding-inline: 2.5rem; }
-      .experience-grid { grid-template-columns: minmax(220px, .72fr) minmax(0, 1.4fr); }
+      .product-story { padding-inline: 2.5rem; }
       .menu-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > :first-child { grid-column: 1 / -1; }
@@ -742,9 +677,9 @@
       .hamburger { display: flex; }
 
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-copy { padding: 3rem 1.5rem 2.5rem; }
-      .hero-visual { min-height: 55vw; padding: 2rem; }
-      .hero-roll-img { width: min(280px, 75%); }
+      .hero-copy { min-height: 72vh; padding: 5rem 1.5rem 3.5rem; }
+      .hero-visual { min-height: auto; padding: 2.5rem 1.5rem; }
+      .hero-video-frame { width: min(100%, 720px); }
       .hero-title { font-size: clamp(2.8rem, 9vw, 4rem); }
 
       .value-grid { grid-template-columns: 1fr; }
@@ -752,17 +687,16 @@
       .value-item:last-child { border-bottom: none; }
 
       .experience-section { padding: 4.5rem 1.5rem 6rem; }
-      .experience-header { grid-template-columns: 1fr; gap: 1.2rem; margin-bottom: 2.75rem; }
-      .experience-grid { grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
-      .brand-poster { grid-column: 1 / -1; grid-row: auto; max-width: 320px; margin: 0 auto 1.5rem; }
-      .video-frame:nth-child(3) { transform: none; }
-      .video-frame:nth-child(3):hover { transform: translateY(-6px); }
+      .experience-section { grid-template-columns: 1fr; gap: 3rem; }
+      .experience-content { max-width: 38rem; }
+      .video-frame { width: min(100%, 680px); justify-self: center; }
 
       .menu-section { padding: 4rem 1.5rem; }
       .section-header { flex-direction: column; align-items: flex-start; }
       .menu-grid { grid-template-columns: 1fr; }
 
-      .statement { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .product-story { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .product-story-media { max-width: 480px; }
 
       .order-section { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
 
@@ -773,10 +707,14 @@
     }
 
     @media (max-width: 520px) {
-      .experience-grid { grid-template-columns: 1fr; }
-      .brand-poster { grid-column: auto; max-width: 260px; }
-      .video-frame { max-width: 440px; margin-inline: auto; }
+      .hero-copy { min-height: 66vh; }
+      .hero-video-frame { border-radius: 22px; }
+      .hero-video-frame video { border-radius: 16px; }
+      .video-frame { max-width: 440px; }
       .header-logo img { width: 38px; height: 38px; }
+      .delivery-grid { grid-template-columns: 1fr; }
+      .site-header > .btn-pill { display: none; }
+      .story-points { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -820,14 +758,14 @@
 ───────────────────────────────────────── -->
 <section class="hero" id="hero">
   <div class="hero-copy">
-    <span class="t-label">Maldonado · Uruguay</span>
+    <span class="t-label">Bienvenidos a Cinnabyte</span>
     <h1 class="hero-title">
       Un byte<br>
       <em>dulce.</em><br>
       Cero bugs.
     </h1>
     <p class="hero-subtitle">
-      Cinnamon rolls artesanales, horneados en Maldonado y terminados con un glaseado que merece su propio update.
+      Cinnamon rolls artesanales, horneados cada día y terminados con un glaseado que merece su propio update.
     </p>
     <div class="hero-actions">
       <a href="#pedido" class="btn-pill rose">Pedir por WhatsApp</a>
@@ -838,49 +776,14 @@
   <div class="hero-visual">
     <div class="swirl swirl-1"></div>
     <div class="swirl swirl-2"></div>
-    <img
-      src="images/front-cinnabyte.png"
-      alt="Cinnamon roll artesanal de Cinnabyte"
-      class="hero-roll-img"
-      width="1080"
-      height="1350"
-      fetchpriority="high"
-    />
+    <div class="hero-video-frame">
+      <video autoplay muted loop playsinline controls preload="auto" aria-label="Preparación artesanal de un cinnamon roll Cinnabyte">
+        <source src="videos/cinna-video-02.mp4" type="video/mp4"/>
+        Tu navegador no puede reproducir este video.
+      </video>
+    </div>
   </div>
 </section>
-
-<!-- ─────────────────────────────────────────
-     TICKER
-───────────────────────────────────────── -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">Hechos en Uruguay</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Masa artesanal</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Glaseado cremoso</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Pickup Maldonado</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Envío Punta del Este</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Código: CINN-BITE</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <!-- duplicate for seamless -->
-    <span class="ticker-item">Hechos en Uruguay</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Masa artesanal</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Glaseado cremoso</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Pickup Maldonado</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Envío Punta del Este</span>
-    <span class="ticker-item ticker-dot">·</span>
-    <span class="ticker-item">Código: CINN-BITE</span>
-    <span class="ticker-item ticker-dot">·</span>
-  </div>
-</div>
 
 <!-- ─────────────────────────────────────────
      PROPUESTA DE VALOR
@@ -898,8 +801,8 @@
   </div>
   <div class="value-item reveal reveal-delay-2">
     <div class="value-num">03</div>
-    <div class="value-title">Entrega en tu zona</div>
-    <p class="value-desc">Pickup en Maldonado o envío directo a Punta del Este para que tu próximo antojo siempre quede cerca.</p>
+    <div class="value-title">Hechos a mano</div>
+    <p class="value-desc">Cada roll se forma, rellena y glasea con atención para que disfrutes la textura perfecta en cada bocado.</p>
   </div>
 </div>
 
@@ -907,48 +810,27 @@
      EXPERIENCIA / VIDEOS
 ───────────────────────────────────────── -->
 <section class="experience-section" id="experiencia">
-  <div class="experience-header reveal">
-    <div>
-      <span class="t-label" style="display:block; color:rgba(255,255,255,.5); margin-bottom:1rem;">— Así se ve un buen byte —</span>
-      <h2 class="section-heading">Del horno<br><em>a tu pantalla.</em></h2>
-    </div>
+  <div class="experience-content reveal">
+    <span class="t-label" style="color:rgba(255,255,255,.5);">— El toque final —</span>
+    <h2 class="section-heading">Glaseado para<br><em>mirar de cerca.</em></h2>
     <p class="experience-copy">
-      Mirá de cerca la textura, el glaseado y ese momento exacto en el que un CinnaByte deja de ser una idea y se convierte en tu próximo pedido.
+      Una segunda mirada al proceso: textura, canela y el glaseado que termina cada CinnaByte justo antes de llegar a tus manos.
     </p>
+    <a href="#pedido" class="btn-pill rose">Quiero el mío</a>
   </div>
 
-  <div class="experience-grid">
-    <aside class="brand-poster reveal" aria-label="Identidad de Cinnabyte">
-      <img src="images/logo_01.png" alt="Logo oficial de Cinnabyte" width="1080" height="1080" loading="lazy"/>
-      <p>Cinnamon rolls · Maldonado</p>
-    </aside>
-
-    <article class="video-frame reveal reveal-delay-1">
-      <div class="frame-topbar">
-        <div class="frame-dots" aria-hidden="true">
-          <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
-        </div>
-        <span class="frame-label">Byte 01 · Recién hecho</span>
+  <article class="video-frame reveal reveal-delay-1">
+    <div class="frame-topbar">
+      <div class="frame-dots" aria-hidden="true">
+        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
       </div>
-      <video autoplay muted loop playsinline controls preload="metadata" aria-label="Preparación de un cinnamon roll Cinnabyte">
-        <source src="videos/cinna-video-01.mp4" type="video/mp4"/>
-        Tu navegador no puede reproducir este video.
-      </video>
-    </article>
-
-    <article class="video-frame reveal reveal-delay-2">
-      <div class="frame-topbar">
-        <div class="frame-dots" aria-hidden="true">
-          <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
-        </div>
-        <span class="frame-label">Byte 02 · Close-up</span>
-      </div>
-      <video autoplay muted loop playsinline controls preload="metadata" aria-label="Detalle de un cinnamon roll Cinnabyte">
-        <source src="videos/cinna-video-02.mp4" type="video/mp4"/>
-        Tu navegador no puede reproducir este video.
-      </video>
-    </article>
-  </div>
+      <span class="frame-label">CinnaByte · Close-up</span>
+    </div>
+    <video muted loop playsinline controls preload="metadata" aria-label="Detalle del glaseado de un cinnamon roll Cinnabyte">
+      <source src="videos/cinna-video-01.mp4" type="video/mp4"/>
+      Tu navegador no puede reproducir este video.
+    </video>
+  </article>
 </section>
 
 <!-- ─────────────────────────────────────────
@@ -1017,36 +899,22 @@
 </section>
 
 <!-- ─────────────────────────────────────────
-     STATEMENT BAND
+     HISTORIA DEL PRODUCTO
 ───────────────────────────────────────── -->
-<section class="statement" id="nosotros">
-  <p class="statement-text reveal">
-    Amasamos lento,<br>
-    <em>horneamos fresco.</em><br>
-    Una sola mordida y ya no hay marcha atrás.
-  </p>
-  <div class="statement-detail reveal reveal-delay-1">
-    <div class="detail-row">
-      <div class="detail-icon">🌿</div>
-      <div>
-        <div class="detail-title">Sin aditivos</div>
-        <p class="detail-text">Ingredientes honestos y una receta pensada para que el sabor sea siempre el protagonista.</p>
-      </div>
-    </div>
-    <div class="detail-row">
-      <div class="detail-icon">🤲</div>
-      <div>
-        <div class="detail-title">Hecho a mano</div>
-        <p class="detail-text">Cada roll se forma, rellena y glasea a mano, con atención y cuidado real.</p>
-      </div>
-    </div>
-    <div class="detail-row">
-      <div class="detail-icon">📍</div>
-      <div>
-        <div class="detail-title">Maldonado, Uruguay</div>
-        <p class="detail-text">Producción local y entrega cercana para disfrutar cada CinnaByte en su mejor momento.</p>
-      </div>
-    </div>
+<section class="product-story" id="nosotros">
+  <figure class="product-story-media reveal">
+    <img src="images/front-cinnabyte.png" alt="Cinnamon roll artesanal de Cinnabyte con glaseado" width="1080" height="1350" loading="lazy"/>
+  </figure>
+  <div class="product-story-copy reveal reveal-delay-1">
+    <span class="t-label">— Nuestro roll —</span>
+    <h2 class="section-heading">Amasamos lento.<br><em>Horneamos fresco.</em></h2>
+    <p class="t-body">
+      Una receta artesanal, ingredientes honestos y atención en cada detalle. La imagen habla por el producto sin competir con el resto de la experiencia.
+    </p>
+    <ul class="story-points">
+      <li>🌿 Ingredientes reales</li>
+      <li>🤲 Elaboración artesanal</li>
+    </ul>
   </div>
 </section>
 
@@ -1063,11 +931,6 @@
     <p class="t-body" style="font-size:0.88rem;">
       Completá el formulario y te contactamos por WhatsApp para confirmar el pedido y la entrega. Sin complicaciones.
     </p>
-    <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.5rem;">
-      <span class="t-label">Zonas de entrega</span>
-      <p style="font-size:0.85rem; font-weight:300; color:var(--ink-muted);">📍 Pickup en Maldonado</p>
-      <p style="font-size:0.85rem; font-weight:300; color:var(--ink-muted);">🛵 Envío a Punta del Este</p>
-    </div>
   </div>
 
   <div class="reveal reveal-delay-1">
@@ -1170,17 +1033,13 @@
         <li><a href="https://www.instagram.com/cinnabyte.uy/" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="#nosotros">Nuestra historia</a></li>
       </ul>
-      <div style="margin-top:1.5rem;">
-        <p style="font-size:0.75rem; color:rgba(255,255,255,0.35); margin-bottom:0.3rem; letter-spacing:0.1em; text-transform:uppercase;">Zona</p>
-        <p style="font-size:0.82rem; font-weight:300; color:rgba(255,255,255,0.55);">Maldonado / Punta del Este</p>
-      </div>
     </div>
 
   </div>
 
   <div class="footer-bottom">
     <span>© 2026 Cinnabyte UY · Todos los derechos reservados.</span>
-    <span>CINN-BITE v2.0 · Made in Uruguay 🇺🇾</span>
+    <span>Sitio realizado por CSTECH team</span>
   </div>
 </footer>
 
