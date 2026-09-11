@@ -1,15 +1,24 @@
 /* Identidad Cinnabyte. Estilos mobile-first, sin dependencias. */
 :root {
-  --mint: #c7f6dc;
-  --mint-soft: #eafbf2;
-  --pink: #ffb8dc;
-  --pink-soft: #fff0f7;
-  --cream: #fff9f2;
-  --ink: #201d1b;
-  --muted: #68615d;
-  --rose: #b92770;
-  --line: rgba(32, 29, 27, 0.14);
-  --font: "Poppins", system-ui, sans-serif;
+  --cinna-mint: #74d69c;
+  --byte-pink: #ff3e86;
+  --cinnamon: #c66a32;
+  --espresso: #211713;
+  --cream: #fff7ee;
+  --white: #ffffff;
+
+  --text-primary: var(--espresso);
+  --text-secondary: #6b5d55;
+  --bg-primary: var(--white);
+  --bg-secondary: var(--cream);
+  --primary: var(--byte-pink);
+  --secondary: var(--cinna-mint);
+  --accent: var(--cinnamon);
+  --mint-soft: #eef9f2;
+  --pink-soft: #fff0f5;
+  --link-color: #a92154;
+  --border-color: rgba(33, 23, 19, 0.12);
+  --font: "Space Grotesk", system-ui, sans-serif;
 }
 *,
 *::before,
@@ -24,8 +33,8 @@ html {
 }
 body {
   font-family: var(--font);
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   text-rendering: optimizeLegibility;
 }
 body:has(dialog[open]) {
@@ -60,7 +69,7 @@ button {
   display: none !important;
 }
 :focus-visible {
-  outline: 3px solid var(--rose);
+  outline: 3px solid var(--byte-pink);
   outline-offset: 5px;
 }
 .skip-link {
@@ -69,7 +78,7 @@ button {
   top: -5rem;
   z-index: 400;
   padding: 1rem;
-  background: var(--ink);
+  background: var(--espresso);
   color: white;
 }
 .skip-link:focus {
@@ -80,12 +89,12 @@ button {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .t-body {
   font-size: 0.94rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .section-space {
   padding: 4.5rem 1.25rem;
@@ -100,7 +109,7 @@ button {
 }
 em {
   font-style: normal;
-  color: var(--rose);
+  color: inherit;
 }
 .btn-pill {
   display: inline-flex;
@@ -110,9 +119,9 @@ em {
   min-height: 46px;
   padding: 0.8rem 1.25rem;
   border: 1px solid transparent;
-  border-radius: 14px;
-  background: var(--ink);
-  color: var(--cream);
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--espresso);
   font-size: 0.78rem;
   font-weight: 600;
   line-height: 1.4;
@@ -121,24 +130,27 @@ em {
     transform 0.2s;
 }
 .btn-pill:hover {
-  background: #443b36;
+  background: var(--espresso);
   transform: translateY(-2px);
+  color: var(--white);
 }
 .btn-pill.rose {
-  background: var(--rose);
-  color: white;
+  background: var(--primary);
+  color: var(--espresso);
 }
 .btn-pill.rose:hover {
-  background: #961c59;
+  background: var(--espresso);
+  color: var(--white);
 }
 .btn-pill.outline {
-  border-color: var(--ink);
-  background: transparent;
-  color: var(--ink);
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: var(--espresso);
 }
 .btn-pill.outline:hover {
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--espresso);
+  color: var(--white);
+  border-color: var(--espresso);
 }
 .site-header {
   position: fixed;
@@ -149,9 +161,9 @@ em {
   justify-content: space-between;
   gap: 0.6rem;
   padding: 0.8rem 1.1rem;
-  background: rgba(255, 249, 242, 0.94);
+  background: rgba(255, 247, 238, 0.96);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-color);
 }
 .header-logo {
   display: flex;
@@ -165,7 +177,7 @@ em {
   width: 160px;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0;
 }
 .footer-brand .header-logo img {
   width: 220px;
@@ -183,10 +195,14 @@ em {
   display: none;
   gap: 2rem;
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .header-nav a:hover {
-  color: var(--rose);
+  color: var(--espresso);
+  text-decoration: underline;
+  text-decoration-color: var(--byte-pink);
+  text-underline-offset: 0.4rem;
+  text-decoration-thickness: 2px;
 }
 .hamburger {
   display: flex;
@@ -202,7 +218,7 @@ em {
 .hamburger span {
   width: 21px;
   height: 2px;
-  background: var(--ink);
+  background: var(--espresso);
 }
 .mobile-nav {
   border: 0;
@@ -211,7 +227,7 @@ em {
   width: 100%;
   height: 100dvh;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--espresso);
 }
 .mobile-nav nav {
   display: flex;
@@ -234,9 +250,7 @@ em {
 }
 .hero {
   padding-top: 78px;
-  background:
-    radial-gradient(ellipse at 15% 25%, #ffe0ee80, transparent 45%),
-    var(--cream);
+  background: var(--bg-secondary);
 }
 .hero-copy {
   text-align: center;
@@ -250,13 +264,13 @@ em {
 .hero-title {
   font-size: clamp(3.25rem, 8vw, 5.6rem);
   line-height: 0.98;
-  letter-spacing: -0.065em;
-  font-weight: 800;
+  letter-spacing: -0.055em;
+  font-weight: 700;
 }
 .hero-subtitle {
   max-width: 535px;
   margin: 1.5rem auto;
-  color: var(--muted);
+  color: var(--text-secondary);
   font-size: 0.92rem;
   line-height: 1.75;
   text-wrap: pretty;
@@ -272,17 +286,23 @@ em {
   max-width: 440px;
   font-size: 0.8rem;
   line-height: 1.65;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .hero-availability {
   font-size: 0.7rem;
   line-height: 1.6;
   font-weight: 500;
-  color: var(--rose);
+  color: var(--espresso);
+  background: var(--mint-soft);
+  border: 1px solid var(--cinna-mint);
+  border-radius: 99px;
+  padding: 0.45rem 0.85rem;
+  width: fit-content;
+  margin: 0.8rem auto 0;
 }
 .hero-visual {
   padding: 1.5rem 1.25rem 2.5rem;
-  background: var(--mint);
+  background: var(--bg-secondary);
 }
 .video-heading {
   display: flex;
@@ -294,15 +314,16 @@ em {
 }
 .video-heading .t-label {
   font-size: 0.62rem;
-  color: #375844;
+  color: var(--text-secondary);
 }
 .hero-video-frame {
   max-width: 940px;
   margin: auto;
   padding: 0.45rem;
-  background: #ffffff8c;
-  border-radius: 23px;
-  box-shadow: 0 20px 45px #27473316;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 20px 45px #21171312;
+  border: 1px solid var(--border-color);
 }
 .hero-video-frame video {
   display: block;
@@ -310,22 +331,22 @@ em {
   aspect-ratio: 16/9;
   object-fit: contain;
   border-radius: 17px;
-  background: var(--ink);
+  background: var(--espresso);
 }
 .value-grid {
   display: grid;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-color);
 }
 .value-item {
   padding: 2rem 1.5rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-color);
 }
 .value-item:last-child {
   border: 0;
 }
 .value-num {
   display: block;
-  color: var(--rose);
+  color: var(--espresso);
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -340,16 +361,16 @@ em {
   max-width: 360px;
 }
 .experience-section {
-  background: var(--ink);
+  background: var(--espresso);
   color: var(--cream);
   display: grid;
   gap: 2.5rem;
 }
 .experience-content .t-label {
-  color: var(--mint);
+  color: var(--cinna-mint);
 }
 .experience-content em {
-  color: var(--pink);
+  color: var(--cream);
 }
 .experience-copy {
   font-size: 0.9rem;
@@ -410,13 +431,13 @@ em {
   font-size: 1.35rem;
 }
 .carousel-arrow:hover {
-  background: var(--mint);
-  border-color: var(--mint);
-  color: var(--ink);
+  background: var(--cinna-mint);
+  border-color: var(--cinna-mint);
+  color: var(--espresso);
 }
 .experience-carousel:focus-visible,
 .carousel-arrow:focus-visible {
-  outline-color: var(--pink);
+  outline-color: var(--byte-pink);
 }
 .carousel-status {
   color: #d1c9c2;
@@ -444,21 +465,21 @@ em {
 .section-intro {
   font-size: 0.85rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--text-secondary);
   max-width: 365px;
 }
 .section-intro strong {
   font-weight: 500;
-  color: var(--ink);
+  color: var(--espresso);
 }
 .flavors-grid {
   display: grid;
   gap: 1.25rem;
 }
 .flavor-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 23px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -481,7 +502,7 @@ em {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: var(--mint);
+  background: var(--cinna-mint);
   padding: 0.4rem 0.7rem;
   border-radius: 30px;
   font-size: 0.65rem;
@@ -508,14 +529,14 @@ em {
 .card-desc {
   font-size: 0.82rem;
   line-height: 1.75;
-  color: var(--muted);
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   flex: 1;
 }
 .pack-label {
   font-size: 0.72rem;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -527,11 +548,13 @@ em {
 }
 .card-price {
   font-weight: 700;
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   letter-spacing: -0.055em;
   white-space: nowrap;
+  color: var(--byte-pink);
 }
 .card-price span {
+  color: var(--espresso);
   font-size: 0.65rem;
   letter-spacing: 0;
   font-weight: 500;
@@ -541,7 +564,7 @@ em {
   padding: 0.7rem 1rem;
 }
 .coming-soon {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
   font-size: 0.85rem;
   font-weight: 500;
@@ -550,7 +573,7 @@ em {
 .coming-soon span {
   font-weight: 400;
   font-size: 0.76rem;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .flavors-note {
   display: flex;
@@ -560,15 +583,15 @@ em {
   margin: 2rem auto 0;
   font-size: 0.82rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--text-secondary);
   text-align: left;
 }
 .flavors-note > span {
   font-size: 2rem;
-  color: var(--rose);
+  color: var(--cinnamon);
 }
 .product-story {
-  background: var(--pink);
+  background: var(--bg-secondary);
   display: grid;
   gap: 2.5rem;
   align-items: center;
@@ -583,18 +606,18 @@ em {
   aspect-ratio: 4/5;
   width: 100%;
   object-fit: cover;
-  border: 8px solid #fff9f2a6;
-  border-radius: 24px;
-  box-shadow: 0 15px 35px #66384c1a;
+  border: 8px solid var(--white);
+  border-radius: 18px;
+  box-shadow: 0 15px 35px #21171312;
 }
 .product-story-media figcaption {
   font-size: 0.7rem;
   text-align: center;
   margin-top: 0.8rem;
-  color: #643b4e;
+  color: var(--text-secondary);
 }
 .product-story-copy .t-body {
-  color: #583c49;
+  color: var(--text-secondary);
   margin-bottom: 1.1rem;
 }
 .story-signature {
@@ -603,6 +626,8 @@ em {
   letter-spacing: -0.025em;
   line-height: 1.6;
   margin: 1.5rem 0;
+  border-left: 3px solid var(--cinnamon);
+  padding-left: 1rem;
 }
 .story-details {
   display: flex;
@@ -612,11 +637,12 @@ em {
 .story-details span {
   font-size: 0.64rem;
   padding: 0.45rem 0.65rem;
-  border: 1px solid #7d325c40;
+  border: 1px solid var(--cinna-mint);
   border-radius: 20px;
+  background: var(--mint-soft);
 }
 .order-section {
-  background: var(--mint-soft);
+  background: var(--bg-primary);
 }
 .order-intro {
   text-align: center;
@@ -643,7 +669,7 @@ em {
   font-weight: 600;
 }
 .delivery-info > span {
-  color: var(--rose);
+  color: var(--cinnamon);
   font-size: 1.4rem;
 }
 .flyer-preview {
@@ -654,8 +680,9 @@ em {
   max-width: 100%;
   margin: 0 auto 2rem;
   padding: 0.6rem 1rem 0.6rem 0.6rem;
-  border: 1px solid #92ba9e;
-  border-radius: 15px;
+  border: 1px solid var(--cinna-mint);
+  border-radius: 12px;
+  background: var(--mint-soft);
 }
 .flyer-preview > img {
   width: 48px;
@@ -669,11 +696,11 @@ em {
   font-size: 0.75rem;
 }
 .flyer-preview > span > span {
-  color: var(--muted);
+  color: var(--text-secondary);
   font-size: 0.68rem;
 }
 .flyer-preview:hover {
-  background: white;
+  background: var(--cinna-mint);
 }
 .order-form {
   display: flex;
@@ -681,23 +708,24 @@ em {
   gap: 1.3rem;
   max-width: 680px;
   margin: auto;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 24px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
   padding: 1.4rem;
-  box-shadow: 0 16px 48px #255b3710;
+  box-shadow: 0 16px 48px #2117130d;
+  border-top: 3px solid var(--cinna-mint);
 }
 .form-caption {
   font-size: 1rem;
   font-weight: 600;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border-color);
 }
 .form-caption span {
   display: block;
   font-size: 0.65rem;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text-secondary);
   margin-top: 0.35rem;
 }
 .field-group {
@@ -713,21 +741,21 @@ em {
 }
 .field-label span {
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .field-input {
   min-height: 48px;
   width: 100%;
   min-width: 0;
-  background: #fffefa;
-  border: 1px solid #bdb7b1;
+  background: var(--white);
+  border: 1px solid #b5aaa3;
   border-radius: 10px;
   padding: 0.8rem;
   font-size: 1rem;
-  color: var(--ink);
+  color: var(--espresso);
 }
 .field-input:focus {
-  outline: 2px solid var(--rose);
+  outline: 2px solid var(--byte-pink);
   outline-offset: 2px;
 }
 textarea.field-input {
@@ -740,7 +768,7 @@ textarea.field-input {
 }
 .field-hint {
   font-size: 0.71rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 #pack-help {
@@ -767,13 +795,13 @@ textarea.field-input {
   left: 0.8rem;
   width: 16px;
   height: 16px;
-  accent-color: var(--rose);
+  accent-color: var(--byte-pink);
 }
 .delivery-label {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  border: 1px solid #bdb7b1;
+  border: 1px solid #b5aaa3;
   border-radius: 12px;
   padding: 0.8rem 0.8rem 0.8rem 2.4rem;
   font-size: 0.7rem;
@@ -784,16 +812,16 @@ textarea.field-input {
   font-weight: 600;
 }
 .delivery-label b {
-  color: var(--rose);
+  color: var(--espresso);
   font-weight: 600;
 }
 .delivery-opt input:checked + .delivery-label {
-  border-color: var(--rose);
+  border-color: var(--byte-pink);
   background: var(--pink-soft);
-  box-shadow: inset 0 0 0 1px var(--rose);
+  box-shadow: inset 0 0 0 1px var(--byte-pink);
 }
 .delivery-opt input:focus-visible + .delivery-label {
-  outline: 3px solid var(--rose);
+  outline: 3px solid var(--byte-pink);
   outline-offset: 3px;
 }
 .order-summary {
@@ -804,7 +832,7 @@ textarea.field-input {
 #summary-detail {
   font-size: 0.77rem;
   line-height: 1.7;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .order-summary > div {
   display: flex;
@@ -837,12 +865,12 @@ textarea.field-input {
   font-size: 0.69rem;
   text-align: center;
   line-height: 1.8;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 .form-note a,
 .order-form noscript a {
   text-decoration: underline;
-  color: var(--rose);
+  color: var(--byte-pink);
 }
 .flyer-dialog {
   border: 0;
@@ -853,10 +881,10 @@ textarea.field-input {
   max-width: 94vw;
   margin: auto;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--espresso);
 }
 dialog::backdrop {
-  background: #201d1bc9;
+  background: #211713c9;
   backdrop-filter: blur(5px);
 }
 .dialog-heading {
@@ -875,7 +903,7 @@ dialog::backdrop {
   border: 0;
   font-size: 2rem;
   background: none;
-  color: var(--ink);
+  color: var(--espresso);
   flex-shrink: 0;
 }
 .flyer-dialog > img {
@@ -884,7 +912,7 @@ dialog::backdrop {
   border-radius: 12px;
 }
 .site-footer {
-  background: var(--ink);
+  background: var(--espresso);
   color: var(--cream);
   padding: 3.5rem 1.25rem 1.5rem;
 }
@@ -903,7 +931,7 @@ dialog::backdrop {
 }
 .footer-brand > a:last-child {
   font-size: 0.78rem;
-  color: var(--pink);
+  color: var(--byte-pink);
 }
 .footer-col-title {
   font-size: 0.68rem;
@@ -922,7 +950,7 @@ dialog::backdrop {
   color: #d5cec7;
 }
 .footer-grid a:hover {
-  color: var(--pink);
+  color: var(--byte-pink);
 }
 .footer-bottom {
   display: flex;
@@ -989,7 +1017,7 @@ dialog::backdrop {
   .value-item {
     padding: 2.5rem 2rem;
     border-bottom: 0;
-    border-right: 1px solid var(--line);
+    border-right: 1px solid var(--border-color);
   }
   .flavors-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1106,4 +1134,37 @@ dialog::backdrop {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Acentos de marca sobre superficies neutras. */
+.hero-title em {
+  color: var(--byte-pink);
+}
+.welcome::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.55rem;
+  border-radius: 50%;
+  background: var(--cinna-mint);
+}
+.value-num::before {
+  content: "";
+  display: inline-block;
+  width: 1.1rem;
+  height: 2px;
+  vertical-align: middle;
+  margin-right: 0.55rem;
+  background: var(--cinnamon);
+}
+.footer-brand .header-logo {
+  width: fit-content;
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  background: var(--cream);
+}
+.form-note a,
+.order-form noscript a {
+  color: var(--link-color);
 }

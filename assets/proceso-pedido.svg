@@ -13,7 +13,7 @@
     Retiro o entrega en Maldonado centro gratis; envío a Punta del Este por 80
     UYU extra.
   </desc>
-  <rect width="800" height="1000" rx="24" fill="#EAFBF2" />
+  <rect width="800" height="1000" rx="24" fill="#FFF7EE" />
   <rect
     x="24"
     y="24"
@@ -21,9 +21,9 @@
     height="952"
     rx="20"
     fill="none"
-    stroke="#97BCA5"
+    stroke="#74D69C"
   />
-  <g font-family="Arial, sans-serif" fill="#201D1B">
+  <g font-family="Arial, sans-serif" fill="#211713">
     <text x="400" y="86" text-anchor="middle" font-size="28" font-weight="700">
       Cinnabyte
     </text>
@@ -33,18 +33,18 @@
       text-anchor="middle"
       font-size="13"
       letter-spacing="3"
-      fill="#68615D"
+      fill="#6B5D55"
     >
       UN BYTE DULCE. CERO BUGS.
     </text>
     <text x="400" y="194" text-anchor="middle" font-size="38" font-weight="700">
       Tu pausa, en cuatro pasos.
     </text>
-    <text x="400" y="232" text-anchor="middle" font-size="18" fill="#68615D">
+    <text x="400" y="232" text-anchor="middle" font-size="18" fill="#6B5D55">
       Hechos a mano. Pedidos sin vueltas.
     </text>
-    <rect x="64" y="272" width="672" height="124" rx="18" fill="#FFF9F2" />
-    <circle cx="111" cy="319" r="23" fill="#FFB8DC" />
+    <rect x="64" y="272" width="672" height="124" rx="18" fill="#FFFFFF" />
+    <circle cx="111" cy="319" r="23" fill="#74D69C" />
     <text x="111" y="327" text-anchor="middle" font-size="22" font-weight="700">
       1
     </text>
@@ -54,11 +54,11 @@
     <text x="154" y="347" font-size="18">
       Classic: 610 UYU · Dulce de Leche: 650 UYU
     </text>
-    <text x="154" y="373" font-size="16" fill="#68615D">
+    <text x="154" y="373" font-size="16" fill="#6B5D55">
       Cada caja trae 6 rolls del mismo sabor.
     </text>
-    <rect x="64" y="412" width="672" height="124" rx="18" fill="#FFF9F2" />
-    <circle cx="111" cy="459" r="23" fill="#FFB8DC" />
+    <rect x="64" y="412" width="672" height="124" rx="18" fill="#FFFFFF" />
+    <circle cx="111" cy="459" r="23" fill="#74D69C" />
     <text x="111" y="467" text-anchor="middle" font-size="22" font-weight="700">
       2
     </text>
@@ -68,11 +68,11 @@
     <text x="154" y="487" font-size="18">
       Completá el formulario, revisá el total y enviá.
     </text>
-    <text x="154" y="513" font-size="16" fill="#68615D">
+    <text x="154" y="513" font-size="16" fill="#6B5D55">
       Nuestro número: 097 316 401
     </text>
-    <rect x="64" y="552" width="672" height="124" rx="18" fill="#FFF9F2" />
-    <circle cx="111" cy="599" r="23" fill="#FFB8DC" />
+    <rect x="64" y="552" width="672" height="124" rx="18" fill="#FFFFFF" />
+    <circle cx="111" cy="599" r="23" fill="#74D69C" />
     <text x="111" y="607" text-anchor="middle" font-size="22" font-weight="700">
       3
     </text>
@@ -82,11 +82,11 @@
     <text x="154" y="627" font-size="18">
       Conversamos sobre disponibilidad, pago y horario.
     </text>
-    <text x="154" y="653" font-size="16" fill="#68615D">
+    <text x="154" y="653" font-size="16" fill="#6B5D55">
       Te confirmamos el pedido por WhatsApp.
     </text>
-    <rect x="64" y="692" width="672" height="124" rx="18" fill="#FFF9F2" />
-    <circle cx="111" cy="739" r="23" fill="#FFB8DC" />
+    <rect x="64" y="692" width="672" height="124" rx="18" fill="#FFFFFF" />
+    <circle cx="111" cy="739" r="23" fill="#74D69C" />
     <text x="111" y="747" text-anchor="middle" font-size="22" font-weight="700">
       4
     </text>
@@ -96,20 +96,21 @@
     <text x="154" y="767" font-size="18">
       Maldonado centro: retiro o entrega gratis.
     </text>
-    <text x="154" y="793" font-size="16" fill="#68615D">
+    <text x="154" y="793" font-size="16" fill="#6B5D55">
       Punta del Este: envío +80 UYU por pedido.
     </text>
+    <path d="M330 845h140" stroke="#C66A32" stroke-width="3" />
     <text
       x="400"
       y="885"
       text-anchor="middle"
       font-size="23"
       font-weight="700"
-      fill="#B92770"
+      fill="#211713"
     >
       Menos scroll. Más roll.
     </text>
-    <text x="400" y="927" text-anchor="middle" font-size="17" fill="#68615D">
+    <text x="400" y="927" text-anchor="middle" font-size="17" fill="#6B5D55">
       @cinnabyte.uy · Maldonado, Uruguay
     </text>
   </g>

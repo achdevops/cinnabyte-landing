@@ -13,13 +13,19 @@ Abrir http://127.0.0.1:4173.
 ## Contenido y archivos
 
 - `index.html`: textos, secciones, fotografías, opciones del formulario y video. Las secciones están identificadas por `hero`, `experiencia`, `sabores`, `nosotros` y `pedido`.
-- `assets/cb-logo-new-v1.webp` y `assets/favicon.png`: versiones web del logo original `images/branding/cb-logo-new-v1`, conservando sus proporciones.
+- `assets/cb-logo-new-v1.webp` y `assets/favicon.png`: versiones web del logo original `images/branding/cb-logo-new-v1`, conservando sus proporciones y la transparencia del PNG actualizado.
 - El carrusel de Experiencia muestra un sixpack a la vez (Classic o DDL). Navegación con botones, flechas del teclado y deslizamiento horizontal en móvil; sin avance automático.
 - `assets/styles.css`: colores, tipografía y diseño responsivo.
 - `assets/site.js`: catálogo `PRODUCTS`, entregas `DELIVERY`, cálculo del total y número `WHATSAPP_NUMBER`.
 - `assets/*.webp`: versiones optimizadas de las imágenes finales disponibles en `images/`. Los PNG originales se conservan.
 - `videos/cinna-video-02.mp4`: video promocional. Para cambiarlo, actualizar el `source` y el enlace alternativo en `index.html`, y su portada `assets/video-poster.jpg`. Tiene controles y reproducción manual.
 - `assets/proceso-pedido.svg`: flyer editable del proceso, usado como miniatura y ampliado en un diálogo accesible. Incluye precios, zonas y contacto; mantenerlos sincronizados con el formulario.
+
+## Identidad visual
+
+Paleta centralizada en `:root` de `assets/styles.css`: Cinna Mint `#74D69C`, Byte Pink `#FF3E86`, Cinnamon `#C66A32`, Espresso `#211713`, Cream `#FFF7EE` y White `#FFFFFF`. Fondos mayormente White/Cream, Espresso en Experiencia y pie, Mint en secundarios y badges, Pink en acciones de pedido y Cinnamon en detalles artesanales. Los colores suaves se usan solo en componentes pequeños.
+
+Tipografía **Space Grotesk**: 700 para títulos, 600 para botones y 400–500 para textos. Los botones Pink llevan texto Espresso para dar contraste a etiquetas pequeñas; al pasar el cursor cambian a Espresso con texto blanco. Los enlaces de texto pequeños usan una variante oscura de Pink. El logo conserva transparencia; en el pie se apoya sobre una superficie Cream para hacer legible su línea inferior.
 
 ## Oferta de lanzamiento
 
