@@ -4,11 +4,12 @@ Los ADR conservan el contexto de decisiones que afectan a más de una tarea. Son
 
 ## Índice
 
-| ADR                                         | Estado   | Decisión                                        |
-| ------------------------------------------- | -------- | ----------------------------------------------- |
-| [ADR-0001](ADR-0001-static-github-pages.md) | Aceptada | Mantener landing estática en GitHub Pages       |
-| [ADR-0002](ADR-0002-whatsapp-orders.md)     | Aceptada | Usar WhatsApp como cierre asistido del pedido   |
-| [ADR-0003](ADR-0003-brand-system.md)        | Aceptada | Centralizar marca en tokens y logo transparente |
+| ADR                                            | Estado   | Decisión                                           |
+| ---------------------------------------------- | -------- | -------------------------------------------------- |
+| [ADR-0001](ADR-0001-static-github-pages.md)    | Aceptada | Mantener landing estática en GitHub Pages          |
+| [ADR-0002](ADR-0002-whatsapp-orders.md)        | Aceptada | Usar WhatsApp como cierre asistido del pedido      |
+| [ADR-0003](ADR-0003-brand-system.md)           | Aceptada | Centralizar marca en tokens y logo transparente    |
+| [ADR-0004](ADR-0004-instagram-profile-card.md) | Aceptada | Usar una tarjeta local para el perfil de Instagram |
 
 ## Plantilla
 

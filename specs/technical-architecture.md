@@ -10,6 +10,7 @@ Estado: **Vigente**.
 - Hosting estático en GitHub Pages.
 - Google Fonts es la única dependencia web de presentación.
 - WhatsApp e Instagram son las únicas integraciones externas visibles.
+- Instagram se presenta mediante enlaces y una tarjeta local del perfil. No se carga un iframe, SDK ni script de Meta.
 - No hay build, package manager, framework, API, base de datos, service worker, analítica ni almacenamiento local.
 
 La ausencia de build es una decisión del MVP. No migrar a React, Astro, Vue, un CMS o un sistema de ecommerce porque una edición aislada resulte más cómoda. Evaluar esas migraciones con los criterios de [growth-roadmap.md](growth-roadmap.md) y registrar la decisión en un ADR.

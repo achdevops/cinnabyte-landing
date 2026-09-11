@@ -56,6 +56,7 @@ Revisar anchos 320, 390, 768, 1024 y 1440 px:
 - Orden de tabulación lógico, foco visible y enlace para saltar al contenido.
 - Contenido legible al 200% de zoom y con movimiento reducido.
 - Sin errores en consola ni respuestas 404 para recursos locales.
+- El enlace del handle, “Pedir por Instagram” y el CTA del frame apuntan a `https://www.instagram.com/cinnabyte.uy/`, abren una pestaña nueva y usan `rel="noopener"`.
 
 ## Rendimiento y SEO
 

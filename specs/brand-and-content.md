@@ -91,6 +91,6 @@ Orden vigente:
 5. Sabores: Classic, DDL y Chocolate próximamente.
 6. Historia de Hiro y tradición familiar.
 7. Pedido, condiciones de entrega, flyer y formulario.
-8. Footer con sabores, contacto, Instagram y ubicación.
+8. Footer con sabores, contacto, ubicación y un frame liviano del perfil de Instagram con acceso directo para consultas y pedidos.
 
 Mantener un único `h1`. Cada sección principal debe tener un `h2` asociado mediante `aria-labelledby` cuando corresponda.

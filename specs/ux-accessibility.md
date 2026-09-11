@@ -59,6 +59,7 @@ La persona debe entender qué es Cinnabyte, qué puede comprar, cuánto cuesta y
 - Íconos decorativos se ocultan con `aria-hidden`.
 - No depender únicamente de Pink, Mint o Cinnamon para comunicar estado.
 - Respetar `prefers-reduced-motion`.
+- El frame de Instagram debe conservar el nombre del perfil, explicar que acepta consultas y pedidos, y ofrecer un enlace externo con área táctil mínima de 44 px.
 
 ## Criterios mínimos de aceptación
 
