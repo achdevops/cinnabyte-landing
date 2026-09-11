@@ -2,6 +2,10 @@
 
 Onepage estática para GitHub Pages, sin instalación ni compilación. Cambios de lanzamiento en `feat/ui`.
 
+## Memoria del proyecto
+
+Antes de modificar el sitio, leer [AGENTS.md](AGENTS.md). Las reglas vigentes de producto, marca, arquitectura, UX, recursos, calidad y crecimiento están organizadas en [specs/README.md](specs/README.md). Los flujos reutilizables para agentes viven en [.agents/skills/](.agents/skills/).
+
 ## Vista local
 
 ```sh
